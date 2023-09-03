@@ -25,13 +25,20 @@
 
 .App-link {
   color: #61dafb;
-  padding: 0 20px;
+  padding: 0 30px;
 }
 
 .App-footer {
   text-align: end;
   padding: 0 30px;
 }
+
+.active-link {
+  color: #0074D9;
+
+}
+
+
 
 @keyframes App-logo-spin {
   from {

@@ -7,6 +7,9 @@ import { About } from './Components/About';
 import { Posts } from './Components/Posts';
 import { NotFound } from './Components/NotFound';
 import { Layout } from './Components/Layout';
+import { SinglePage } from './Components/SinglePage';
+import { NewPost } from './Components/NewPost';
+import { EditPost } from './Components/EditPost';
 
 function App() {
     return (
@@ -17,6 +20,9 @@ function App() {
                     <Route index element={ <HomePage/> }/>
                     <Route path="about" element={ <About/> }/>
                     <Route path="posts" element={ <Posts/> }/>
+                    <Route path="posts/:id" element={ <SinglePage/> }/>
+                    <Route path="posts/:id/edit" element={ <EditPost/> }/>
+                    <Route path="posts/new" element={ <NewPost/> }/>
                     <Route path="*" element={ <NotFound/> }/>
                 </Route>
             </Routes>

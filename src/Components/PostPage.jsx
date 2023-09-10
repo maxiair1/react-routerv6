@@ -9,7 +9,7 @@ const PostPage = () => {
 
     //переход назад
     const goBack = () => navigate(-1);
-    const goHome = () => navigate("/", {replace: true});
+    const goHome = () => navigate("/", { replace: true });
 
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/posts/${ id }`)
@@ -19,8 +19,8 @@ const PostPage = () => {
 
     return (
         <div>
-            <button onClick={goBack}>Go back</button>
-            <button onClick={goHome}>Go Home</button>
+            <button onClick={ goBack }>Go back</button>
+            <button onClick={ goHome }>Go Home</button>
             { post && (
                 <>
                     <h1>{ post.title }</h1>

@@ -11,8 +11,8 @@ import { PostPage } from './Components/PostPage';
 import { NewPost } from './Components/NewPost';
 import { EditPost } from './Components/EditPost';
 import { LoginPage } from './Components/LoginPage';
-import { RequireAuth } from './Hoc/RequireAuth';
-import { AuthProvider } from './Hoc/AuthProvider';
+import { RequireAuth } from './HOC/RequireAuth';
+import { AuthProvider } from './HOC/AuthProvider';
 
 function App() {
     return (

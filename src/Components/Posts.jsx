@@ -5,7 +5,7 @@ import { BlogFilter } from './BlogFilter';
 const Posts = () => {
 
     const [posts, setPosts] = useState([]);
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams, setSearchParams] = useSearchParams() ;
     const latestSearch = searchParams.get('latest') || false;
     const postSearch = searchParams.get('post') || '';
     const latest = latestSearch ? 80 : 1;

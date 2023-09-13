@@ -7,12 +7,10 @@ export const BlogFilter = ({ postSearch, latestSearch, setSearchParams }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         const form = e.target;
         const queryPost = form.search.value;
         const queryLatest = form.latest.checked;
         const param = {};
-
         if (queryPost.length) param.post = queryPost || "";
         if (queryLatest) param.latest = queryLatest;
         setSearchParams(param);

@@ -23,12 +23,12 @@ const Posts = () => {
                         setSearchParams={ setSearchParams }
             />
 
-            <Link to="/posts/new">Create new post</Link>
+            <Link to="/react-routerv6/posts/new">Create new post</Link>
             <h1>Posts</h1>
             { posts
                 .filter(post => post.title.includes(postSearch) && post.id >= latest)
                 .map((item) => {
-                    return (<Link key={ item.id } to={ `/posts/${ item.id }` }>
+                    return (<Link key={ item.id } to={ `/react-routerv6/posts/${ item.id }` }>
                         <li>{ item.title } </li>
                     </Link>)
                 }) }

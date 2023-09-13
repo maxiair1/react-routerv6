@@ -9,7 +9,7 @@ const PostPage = () => {
 
     //переход назад
     const goBack = () => navigate(-1);
-    const goHome = () => navigate("/", { replace: true });
+    const goHome = () => navigate("/react-routerv6/", { replace: true });
 
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/posts/${ id }`)
@@ -25,7 +25,7 @@ const PostPage = () => {
                 <>
                     <h1>{ post.title }</h1>
                     <p>{ post.body }</p>
-                    <Link to={ `/posts/${ id }/edit` }>Edit this post</Link>
+                    <Link to={ `/react-routerv6/posts/${ id }/edit` }>Edit this post</Link>
                 </>) }
         </div>
     )

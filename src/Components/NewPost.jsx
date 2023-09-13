@@ -9,7 +9,7 @@ const NewPost = () => {
     return (
         <div>
             <h1>New Post</h1>
-            <button onClick={ () => signout(() => navigate("/", { replace: true })) }>Logout</button>
+            <button onClick={ () => signout(() => navigate("/react-routerv6/", { replace: true })) }>Logout</button>
         </div>
     );
 }

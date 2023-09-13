@@ -19,7 +19,7 @@ function App() {
         <div className="App">
             <AuthProvider>
                 <Routes>
-                    <Route path="/" element={ <Layout/> }>
+                    <Route path="/react-routerv6" element={ <Layout/> }>
                         <Route index element={ <HomePage/> }/>
                         <Route path="about" element={ <About/> }>
                             <Route path="contacts" element={<p>Our contacts</p>}/>

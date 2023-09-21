@@ -26,7 +26,6 @@ const Posts = () => {
                         latestSearch={ latestSearch }
                         setSearchParams={ setSearchParams }
             />
-
             <Link to="/react-routerv6/posts/new">Create new post</Link>
             <h1>Posts</h1>
             <Suspense fallback={<h2>Posts Loading ...</h2>}>

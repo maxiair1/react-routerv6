@@ -1,5 +1,5 @@
 import {  Suspense } from "react";
-import { Link, useNavigate, useAsyncValue, Await, useLoaderData } from 'react-router-dom';
+import { Link, useNavigate, useAsyncValue, Await, useLoaderData, json } from 'react-router-dom';
 
 async function getPost(id) {  //запрос к api за данными
     const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${ id }`);
@@ -7,7 +7,10 @@ async function getPost(id) {  //запрос к api за данными
 }
 
 const loaderPost = async ({ params }) => { //loader для роута, передаем объект с загруженными данными
-    return { post: getPost(params.id), id: params.id };
+    const post = await getPost(params.id)
+    if(!post)
+        throw json({status: "404", statusText: "Post not found"}, {status: 404});
+    return { post: post, id: params.id };
 }
 
 const PostFieldsData = () => {

@@ -1,14 +1,23 @@
 import { Suspense } from "react";
-import { Link, useSearchParams, useLoaderData, Await, defer } from "react-router-dom";
+import { Link, useSearchParams, useLoaderData, Await, defer, json } from "react-router-dom";
 import { BlogFilter } from './BlogFilter';
 
 async function fetchPosts() {
     const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+    // console.log("fetch: ", res)
+    //     if(!res.ok) {
+    //         throw new Response("", { status: res.status, statusText: 'NotFound' })
+    //     }
     return res.json();
 }
 
 const loaderPosts = async () => {
-    return defer({loadPostsData: fetchPosts()})
+    const loadPostsData = await fetchPosts()
+    if(!loadPostsData.length){
+        console.log('error json: ', loadPostsData)
+        throw json({status: "404", statusText: "Posts not found"}, {status: 404})
+    }
+    return defer({loadPostsData: loadPostsData});
 }
 
 const Posts = () => {

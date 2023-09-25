@@ -13,6 +13,8 @@ import { EditPost } from './Components/EditPost';
 import { LoginPage } from './Components/LoginPage';
 import { RequireAuth } from './HOC/RequireAuth';
 import { AuthProvider } from './HOC/AuthProvider';
+import {ErrorPage} from './Components/ErrorPage';
+
 
 function App() {
 
@@ -24,8 +26,8 @@ function App() {
                 <Route path="team" element={<p>Our team</p>}/>
             </Route>
             <Route path="about-us" element={ <Navigate to="/about" replace/> }/>
-            <Route path="posts" element={ <Posts/> } loader={loaderPosts}/>
-            <Route path="posts/:id" element={ <PostPage/> } loader={loaderPost}/>
+            <Route path="posts" element={ <Posts/> } loader={loaderPosts} errorElement={<ErrorPage/>}/>
+            <Route path="posts/:id" element={ <PostPage/> } loader={loaderPost} errorElement={<ErrorPage/>}/>
             <Route path="posts/:id/edit" element={ <EditPost/> }/>
             <Route path="posts/new" element={ <RequireAuth><NewPost/></RequireAuth> }/>
             <Route path="login" element={ <LoginPage/> }/>
